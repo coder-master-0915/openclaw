@@ -717,6 +717,8 @@ export async function getHealthSnapshot(params?: {
       accountSummaries[accountId] = record;
     }
 
+    if (Object.keys(accountSummaries).length === 0) continue;
+
     const defaultSummary =
       accountSummaries[preferredAccountId] ??
       accountSummaries[defaultAccountId] ??
